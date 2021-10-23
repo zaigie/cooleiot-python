@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
  
 setuptools.setup(
     name="cooleiot",                  # 包名称
-    version="0.0.1",                                   # 包版本
+    version="0.0.2",                                   # 包版本
     author="ZaiGie",                           # 作者
     license='MIT',                                     # 协议简写
     author_email="jokerwho@yeah.net",                 # 作者邮箱

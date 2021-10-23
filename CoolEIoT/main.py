@@ -34,7 +34,7 @@ class CoolE(object):
         req_info = requests.get(url, headers=self.headers)
         info = json.loads(req_info.text)
         if info['code'] == 1000:
-            self.client_id += info['data']['device_id']
+            self.client_id += info['data']['device_id'] + str(int(time.time()))
             self.topic += info['data']['username'] + "/" + info['data']['device_id']
             self.device_id = info['data']['device_id']
         else:
@@ -177,7 +177,7 @@ class CoolE(object):
         self.client.subscribe(self.topic)
 
     def on_disconnect(self, client, userdata, rc):
-        self.debug("MQTT连接断开：" + str(rc) + mqtt.connack_string(rc))
+        self.debug("MQTT连接断开：" + mqtt.connack_string(rc))
 
     def on_message(self, client, userdata, msg):
         self.recv = msg.payload.decode("utf-8")
