@@ -28,13 +28,16 @@ class CoolE(object):
         self.content_content = {}
         self.last_publish_time = 0
     
-    def start(self, keepalive:int = 60, ssl:bool = False):
+    def start(self, keepalive:int = 60, ssl:bool = False, host = False):
         global APISERVER,MQTTSERVER,MQTTPORT,MQTTPORTSSL
         url = APISERVER + "device/develop/" + self.developkey
         req_info = requests.get(url, headers=self.headers)
         info = json.loads(req_info.text)
         if info['code'] == 1000:
-            self.client_id += info['data']['device_id'] + str(int(time.time()))
+            if host:
+                self.client_id += 'host-' + str(int(time.time()))
+            else:
+                self.client_id += info['data']['device_id'] + str(int(time.time()))
             self.topic += info['data']['username'] + "/" + info['data']['device_id']
             self.device_id = info['data']['device_id']
         else:

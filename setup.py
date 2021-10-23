@@ -1,12 +1,12 @@
 import setuptools
  
-with open("README.md", "r") as fh:
+with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
  
 setuptools.setup(
     name="cooleiot",                  # 包名称
-    version="0.0.2",                                   # 包版本
-    author="ZaiGie",                           # 作者
+    version="0.0.3",                                   # 包版本
+    author="CoolE IoT",                           # 作者
     license='MIT',                                     # 协议简写
     author_email="jokerwho@yeah.net",                 # 作者邮箱
     description="CoolEIoT Python Library",             # 工具包简单描述
