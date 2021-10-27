@@ -59,6 +59,8 @@ class CoolE(object):
         self.client.loop_start()
     
     def stop(self):
+        self.client.unsubscribe(self.topic)
+        time.sleep(0.1)
         self.client.disconnect()
         time.sleep(0.1)
 
@@ -131,7 +133,7 @@ class CoolE(object):
             self.debug("最多存储30个字段！")
             return
         self.report_content[field] = data
-        self.field_num += 1
+        self.field_num = len(self.report_content.keys())
     
     def updateContent(self, field:str, data):
         self.content_content[field] = data

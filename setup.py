@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
  
 setuptools.setup(
     name="cooleiot",                  # 包名称
-    version="0.0.5",                                   # 包版本
+    version="0.0.7",                                   # 包版本
     author="CoolE IoT",                           # 作者
     license='MIT',                                     # 协议简写
     author_email="jokerwho@yeah.net",                 # 作者邮箱
