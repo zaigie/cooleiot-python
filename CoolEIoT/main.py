@@ -64,7 +64,7 @@ class CoolE(object):
 
     def publish(self, field:str = None, payload = None):
         if time.time() - self.last_publish_time < 1 and self.last_publish_time != 0:
-            time.sleep(time.time() - self.last_publish_time)
+            time.sleep(1-(time.time() - self.last_publish_time))
         if field is None and payload is None:
             # 发布所有updae过的字段消息
             publish_data = {
@@ -143,6 +143,7 @@ class CoolE(object):
             return self.report_content[field]
     
     def clearReport(self):
+        self.field_num = 0
         self.report_content = {}
     
     def getContent(self, field:str):
