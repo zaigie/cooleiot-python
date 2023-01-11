@@ -3,7 +3,7 @@
 酷易物联，快速接入/开发/管理物联设备
 [cooleiot.tech](cooleiot.tech)
 
-> 项目已迁移到 (https://github.com/cooleiot/python-sdk)[https://github.com/cooleiot/python-sdk]
+> 项目已迁移到  https://github.com/cooleiot/python-sdk
 
 ## 实例
 
